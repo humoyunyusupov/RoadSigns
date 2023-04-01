@@ -1,0 +1,151 @@
+body{
+    font-family: "Roboto" ;
+    background-color: rgb(38, 38, 143);
+}
+.title{
+    margin-top: 200px;
+    margin-bottom: 150px;
+    font-size: 72px;
+    color: #fff;
+    text-align: center;
+}
+.btn-site{
+    max-width: 200px;
+    background-color: transparent;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.choose-text{
+    margin-bottom: 30px;
+}
+.welcome-text{
+    margin-bottom: 40px;
+}
+.back-to-menu-btn{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    padding: 4px 8px;
+    font-size: 16px;
+}
+.start-btn{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    padding: 4px 8px;
+    font-size: 16px;
+}
+.next-btn{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    padding: 4px 8px;
+    font-size: 16px;
+}
+
+.form{
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+    max-width: 300px;
+}
+
+
+.sign-title{
+    background-color: rgb(38, 38, 143);
+    font-size: 24px;
+}
+.sign-item{
+    position: relative;
+    padding: 25px;
+    width: 150px;
+    background-color: rgb(38, 38, 143);
+}
+.correct-color{
+    background-color: rgb(0, 255, 0);
+}
+.false-color{
+    background-color: rgb(255, 0, 51);
+}
+.sign-img{
+    width: 100px;
+    height: 100px;
+} 
+.correct-icon{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    bottom: 10px;
+}
+.disabled{
+    opacity: 0.1;
+}
+@media only screen and (max-width:1286px) {
+    
+    .sign-item{
+        padding: 15px;
+        width: 100px;
+        background-color: rgb(38, 38, 143);
+    }
+    .sign-img{
+        width: 70px;
+        height: 70px;
+    } 
+    .sign-title{
+        font-size: 16px;
+    }
+    
+}
+@media only screen and (max-width:800px) {
+    
+    .sign-item{
+        padding: 10px;
+        width: 50px;
+        background-color: rgb(38, 38, 143);
+    }
+    .sign-img{
+        width: 30px;
+        height: 30px;
+    } 
+    .btn-site{
+        width: 70px;
+        font-size: 10px;
+    }
+    .sign-title{
+        font-size: 12px;
+    }
+    .welcome-text{
+        margin-top: 100px;
+        font-size: 50px;
+    }
+    .main-text{
+        font-size: 10px;
+    }
+    
+}
+@media only screen and (max-width:600px) {
+    
+    .title{
+        margin-top: 100px;
+        font-size: 50px;
+    }
+    
+    .back-to-menu-btn{
+        top: 20px;
+        left: 20px;
+    }
+    .start-btn{
+        top: 20px;
+        right: 20px;
+    }
+    .next-btn{
+        top: 20px;
+        right: 20px;
+    }
+}
