@@ -15,13 +15,18 @@ const selectTime = document.querySelector(".js-select-time");
 const elForm = document.querySelector(".js-form");
 const elTime = document.querySelector(".js-time");
 const gameOver = document.querySelector(".over-box");
-const gameWin = document.querySelector(".WIN-box");
+const gameWin = document.querySelector(".win-box");
 const correctIcon = document.querySelector(".correct-icon");
 const correctVoice = document.querySelector(".correct-voice")
 const errorVoice = document.querySelector(".error-voice")
 const elCount = document.querySelector(".count")
 const elScore = document.querySelector(".score")
+const elScoreOver = document.querySelector(".score-over")
+const elCountOver = document.querySelector(".count-over")
+const elScoreWin = document.querySelector(".score-win")
+const elCountWin = document.querySelector(".count-win")
 let correctAnswerIndex = 0
+
 
 
 
@@ -135,27 +140,32 @@ function randomize(level = "Oson") {
                 if(correctAnswerIndex === index) {
                     
                     score += 2
-                    
                     elScore.textContent = `Ball : ${score}`
+                    
                     newItem.classList.add("correct-color")
+                    
                     let audioCorrect = new Audio(("./sounds/correct-voice.mp3"));
                     audioCorrect.play()
+
                     setTimeout(() => {
                         newItem.classList.remove("correct-color")
-                        // audioCorrect.pause()
                         newItem.classList.add("disabled")
                     }, 1400);
                     
                     item.splice(index , 1)
-                    if(item.length === 0){
+                    console.log(item);
+
+                    if(item.length == 0){
                         gameWin.classList.add("d-flex")
                         gameWin.classList.remove("d-none")
                         game.classList.remove("d-block")
                         game.classList.add("d-none")
+                        elCountWin.textContent =  `Urinishlar soni : ${count}`
+                        elScoreWin.textContent = `Ball : ${score}`
                     }
-                    setTimeout(()=>{
+
                         renderSigns(item)
-                    }, 1000)
+
                     const randomAnswer = Math.floor(item.length * Math.random())    
                     
                     correctAnswerIndex = randomAnswer
@@ -179,14 +189,12 @@ function randomize(level = "Oson") {
                         gameOver.classList.remove("d-none")
                         game.classList.remove("d-block")
                         game.classList.add("d-none")
+                        elCountOver.textContent = `Urinishlar soni qolmadi`
+                        elScoreOver.textContent = `Ball : ${score}`
                     }
                     
                 }
             })
-            
-            
-            
-            
             
             fragmentSign.appendChild(elClone);
         })
