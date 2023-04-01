@@ -28,18 +28,12 @@ const elCountWin = document.querySelector(".count-win")
 let correctAnswerIndex = 0
 
 
-
+// Count and Score
 
 let count = 5
 elCount.textContent = `Urinishlar soni : ${count}`
-
-
-
 let score = 0
 elScore.textContent = `Ball : ${score}`
-
-
-
 
 // Listen buttons
 
@@ -79,11 +73,7 @@ nextBtn.addEventListener("click" , (evt)=> {
 });
 
 
-// const
-
-// console.log(randomNumber);
-
-// debugger
+// Randomiz Function
 
 function randomize(level = "Oson") {
     var result = []
@@ -112,12 +102,9 @@ function randomize(level = "Oson") {
     }
     
     
-    // randomize()
-    
-    
     // Render Signs
     
-    function renderSigns (item){
+function renderSigns (item){
         
         const templateSign = document.querySelector(".sign-template").content;
         const fragmentSign = document.createDocumentFragment();
@@ -135,7 +122,6 @@ function randomize(level = "Oson") {
             const newItem =  elClone.querySelector(".sign-item")
             newItem.addEventListener('click', e => {
                 
-                console.log(correctAnswerIndex, index)
                 
                 if(correctAnswerIndex === index) {
                     
@@ -146,15 +132,14 @@ function randomize(level = "Oson") {
                     
                     let audioCorrect = new Audio(("./sounds/correct-voice.mp3"));
                     audioCorrect.play()
-
+                    
                     setTimeout(() => {
                         newItem.classList.remove("correct-color")
                         newItem.classList.add("disabled")
                     }, 1400);
                     
                     item.splice(index , 1)
-                    console.log(item);
-
+                    
                     if(item.length == 0){
                         gameWin.classList.add("d-flex")
                         gameWin.classList.remove("d-none")
@@ -163,14 +148,13 @@ function randomize(level = "Oson") {
                         elCountWin.textContent =  `Urinishlar soni : ${count}`
                         elScoreWin.textContent = `Ball : ${score}`
                     }
-
-                        renderSigns(item)
-
+                    
+                    renderSigns(item)
+                    
                     const randomAnswer = Math.floor(item.length * Math.random())    
                     
                     correctAnswerIndex = randomAnswer
                     elSignTitle.textContent = item[randomAnswer].symbol_title; 
-                    console.log(randomAnswer);
                     
                 }else{
                     count--
@@ -202,15 +186,9 @@ function randomize(level = "Oson") {
         elSignTitle.textContent = item[randomAnswer].symbol_title; 
     }
     
-    
-    
-    
-    // True False
-    
-    
     // Listen form 
     
-    elForm.addEventListener("submit" , evt =>{
+elForm.addEventListener("submit" , evt =>{
         evt.preventDefault()
         
         const selectDiffValue = selectDiff.value;
